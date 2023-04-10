@@ -35,10 +35,13 @@ if __name__ == "__main__":
     if cron:
         time.sleep(30)
 
+    print("Launching telegram bot")
+
     while True:
         now = datetime.datetime.now(tz)
         # Thursday, 11am EST
         if now.weekday() == 3 and now.hour == 11:
+            print("Sending message")
             asyncio.run(main(token, chat_id))
             time.sleep(60 * 60)  # Wait for one hour before checking again
         else:
