@@ -20,13 +20,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--token", help="authentication token")
     parser.add_argument("--chatid", help="chat id")
+    parser.add_argument("--cron", action=argparse.BooleanOptionalAction)
     args = parser.parse_args()
     token = args.token
     chat_id = args.chatid
+    cron = args.cron
     if not token:
         sys.exit("Token required (pass via --token).")
     if not chat_id:
         sys.exit("Chat ID required (pass via --chatid).")
+
+    # When launching via cron @reboot, the network isn't yet available. To compensate, wait half a minute.
+    # Not the prettiest solution, and there's probably a better way, but this is simple.
+    if cron:
+        time.sleep(30)
 
     while True:
         now = datetime.datetime.now(tz)
