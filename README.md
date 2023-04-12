@@ -8,7 +8,7 @@ about the arrival of new free games in the Epic Games Store.
 The code requires Python 3.10+
 
 ```
-python main.py --token=<your-bot-token> --chatid=<your-chat-id>
+python main.py --token=<your-bot-token> --mainchannel=<your-chat-id>
 ```
 
 # Events
