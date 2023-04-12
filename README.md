@@ -1,9 +1,11 @@
 # Summary
 
-This repository features code for a telegram bot that posts a reminder every Thursday at 11am EST
+This repository features code for a telegram bot that, for now, posts a reminder every Thursday at 11am EST
 about the arrival of new free games in the Epic Games Store.
 
 # Launching
+
+The code requires Python 3.10+
 
 ```
 python main.py --token=<your-bot-token> --chatid=<your-chat-id>
@@ -12,7 +14,7 @@ python main.py --token=<your-bot-token> --chatid=<your-chat-id>
 # Events
 
 Events can be placed in the "events" folder.
-They are formatted as in the following examples (timezones are given in pytz format):
+They are formatted as in the following examples (timezones are given in the same format used by pytz):
 
 ```JSON
 {
@@ -51,7 +53,7 @@ One (though perhaps not the best or most secure) way of deploying the bot on a R
 - Add the bot as a cron job (`crontab -e`):
   - set CRON shell to bash: `SHELL=/bin/bash`
   - declare environment variables containing token and chat id (e.g. via `TOKEN=<token>`)
-  - add job via `@reboot ~/path/to/repository/reminder/bin/python ~/path/to/main.py --token=$TOKEN --chatid=$CHATID --cron &>> /desired/path/to/xyz.log`
+  - add job via `@reboot ~/path/to/repository/reminder/bin/python ~/path/to/main.py --token=$TOKEN --mainchannel=$CHATID --cron &>> /desired/path/to/xyz.log`
   - `--cron` simply adds a 30 second delay before starting the functional code execution, as cron starts before the network is available. Not a pretty fix, but a simple one.
 
 # Links
