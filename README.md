@@ -56,6 +56,6 @@ One (though perhaps not the best or most secure) way of deploying the bot on a R
 
 # Links
 
-https://github.com/python-telegram-bot/python-telegram-bot
-https://github.com/python-telegram-bot/python-telegram-bot/wiki/Builder-Pattern
-https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions---JobQueue
+- https://github.com/python-telegram-bot/python-telegram-bot
+- https://github.com/python-telegram-bot/python-telegram-bot/wiki/Builder-Pattern
+- https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions---JobQueue
